@@ -227,10 +227,10 @@ lvim.plugins = {
     requires = "hrsh7th/nvim-cmp",
     event = "InsertEnter",
   },
-  {
-  "rmagatti/goto-preview",
-  config = function()
-  require('goto-preview').setup {
+{
+    "rmagatti/goto-preview",
+    config = function()
+      require('goto-preview').setup {
         width = 120; -- Width of the floating window
         height = 25; -- Height of the floating window
         default_mappings = false; -- Bind default mappings
@@ -242,9 +242,9 @@ lvim.plugins = {
         -- vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>")
         -- vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
         -- vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
-    }
-  end
-},
+      }
+    end
+  },
 {"Chiel92/vim-autoformat"},
 {"easymotion/vim-easymotion"},
 {"tpope/vim-surround"},
@@ -255,7 +255,19 @@ lvim.plugins = {
 {"p00f/nvim-ts-rainbow"},
 {'rust-lang/rust.vim'},
 {'gko/vim-coloresque'},
--- {"github/copilot.vim"},
+{
+    'ojroques/nvim-lspfuzzy',
+    requires = {
+    {'junegunn/fzf'},
+    {'junegunn/fzf.vim'},  -- to enable preview (optional)
+    },
+    config = function ()
+     require('lspfuzzy').setup {}
+    end
+  },
+  -- {'junegunn/fzf', { 'do': { -> fzf#install() } }},
+  -- {'junegunn/fzf.vim'},
+  -- {"github/copilot.vim"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
