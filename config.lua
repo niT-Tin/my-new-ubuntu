@@ -11,7 +11,10 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+-- lvim.colorscheme = "vscode"
+lvim.colorscheme = "desert"
+-- theme for jetbrains
+-- lvim.colorscheme = "darcula"
 vim.opt.wrap = true
 
 
@@ -36,8 +39,8 @@ lvim.keys.normal_mode = {
   --[[
     easymotion快捷键映射
   ]]
-  ["<Leader><Leader>s"] = ":<C-U>call EasyMotion#S(1,0,2)<CR>",
-  ["<Leader><Leader>s2"] = ":<C-U>call EasyMotion#S(2,0,2)<CR>",
+  -- ["<Leader><Leader>s"] = ":<C-U>call EasyMotion#S(1,0,2)<CR>",
+  -- ["<Leader><Leader>s2"] = ":<C-U>call EasyMotion#S(2,0,2)<CR>",
   ["<Leader><Leader>sn"] = ":<C-U>call EasyMotion#S(-1,0,2)<CR>",
   ["<Leader><Leader>w"] = ":<C-U>call EasyMotion#WB(0,0)<CR>",
   ["<Leader><Leader>W"] = ":<C-U>call EasyMotion#WBW(0,0)<CR>",
@@ -80,7 +83,8 @@ lvim.keys.normal_mode = {
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.active = true
+-- lvim.builtin.dashbord.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
@@ -105,7 +109,6 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
-vim.g.rainbow_active = 1
 
 -- generic LSP settings
 
@@ -182,33 +185,31 @@ vim.g.rainbow_active = 1
 
 -- Additional Plugins
 lvim.plugins = {
-{"folke/tokyonight.nvim"},
-{
+  {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
-{"fatih/vim-go"},
-  -- {"p00f/nvim-ts-rainbow"},
-{
+  { "fatih/vim-go" },
+  {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
     config = function()
       require('neoscroll').setup({
         -- All these keys will be mapped to their corresponding default scrolling animation
-        mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-          '<C-y>', '<C-e>', 'zt', 'zz', 'zb', '<S-[>', '<S-]>'},
-        hide_cursor = true,          -- Hide cursor while scrolling
-        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+        mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>',
+          '<C-y>', '<C-e>', 'zt', 'zz', 'zb', '<S-[>', '<S-]>' },
+        hide_cursor = true, -- Hide cursor while scrolling
+        stop_eof = true, -- Stop at <EOF> when scrolling downwards
         use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-        easing_function = nil,        -- Default easing function
-        pre_hook = nil,              -- Function to run before the scrolling animation starts
-        post_hook = nil,              -- Function to run after the scrolling animation ends
+        easing_function = nil, -- Default easing function
+        pre_hook = nil, -- Function to run before the scrolling animation starts
+        post_hook = nil, -- Function to run after the scrolling animation ends
       })
     end
   },
-{
+  {
     "ethanholz/nvim-lastplace",
     event = "BufRead",
     config = function()
@@ -221,13 +222,13 @@ lvim.plugins = {
       })
     end,
   },
-{
+  {
     "tzachar/cmp-tabnine",
     run = "./install.sh",
     requires = "hrsh7th/nvim-cmp",
     event = "InsertEnter",
   },
-{
+  {
     "rmagatti/goto-preview",
     config = function()
       require('goto-preview').setup {
@@ -245,31 +246,48 @@ lvim.plugins = {
       }
     end
   },
-{"Chiel92/vim-autoformat"},
-{"easymotion/vim-easymotion"},
-{"tpope/vim-surround"},
-{"wakatime/vim-wakatime"},
-{'liuchengxu/vista.vim'},
-{'luochen1990/rainbow'},
-{'mg979/vim-visual-multi'},
-{"p00f/nvim-ts-rainbow"},
-{'rust-lang/rust.vim'},
-{'gko/vim-coloresque'},
-{
+  { "Chiel92/vim-autoformat" },
+  { "easymotion/vim-easymotion" },
+  { "tpope/vim-surround" },
+  { "wakatime/vim-wakatime" },
+  { 'liuchengxu/vista.vim' },
+  { 'luochen1990/rainbow' },
+  { 'mg979/vim-visual-multi' },
+  { "p00f/nvim-ts-rainbow" },
+  { 'rust-lang/rust.vim' },
+  { 'gko/vim-coloresque' },
+  {
     'ojroques/nvim-lspfuzzy',
     requires = {
-    {'junegunn/fzf'},
-    {'junegunn/fzf.vim'},  -- to enable preview (optional)
+      { 'junegunn/fzf' },
+      { 'junegunn/fzf.vim' }, -- to enable preview (optional)
     },
-    config = function ()
-     require('lspfuzzy').setup {}
+    config = function()
+      require('lspfuzzy').setup {}
     end
   },
   -- {'junegunn/fzf', { 'do': { -> fzf#install() } }},
   -- {'junegunn/fzf.vim'},
   -- {"github/copilot.vim"},
+  -- vim theme
+  { 'Mofiqul/vscode.nvim' },
+  -- like jetbrain
+  { 'doums/darcula' },
+  { "folke/tokyonight.nvim" },
+
+  { 'Yggdroot/indentLine' },
+  -- debug
+  { 'puremourning/vimspector' },
+  { 'skywind3000/vim-rt-format' },
 }
 
+vim.g.rainbow_active = 1
+vim.g.vscode_style = "dark"
+vim.g.vscode_italic_comment = 1
+
+vim.g.indentLine_enabled = 1
+
+vim.g.vimspector_enable_mappings = 'HUMAN'
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
