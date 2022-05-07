@@ -10,13 +10,29 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
+-- lvim.format_on_save.pattern
 -- lvim.colorscheme = "vscode"
-lvim.colorscheme = "desert"
+-- lvim.colorscheme = "rvcs"
+lvim.colorscheme = "tokyonight"
+-- lvim.colorscheme = "onedark"
 -- theme for jetbrains
 -- lvim.colorscheme = "darcula"
 vim.opt.wrap = true
 
+-- indent_blankline vim config
+vim.opt.list = true
+-- vim.opt.listchars:append("space:⋅")
+-- vim.opt.listchars:append("eol:↴")
+-- lvim.builtin.treesitter.rainbow = { enable = true }
+-- lvim.builtin.treesitter.highlight = { enable = true }
+-- vim.opt.termguicolors = true
+-- vim.cmd([[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]])
+-- vim.cmd([[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]])
+-- vim.cmd([[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]])
+-- vim.cmd([[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]])
+-- vim.cmd([[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]])
+-- vim.cmd([[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]])
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -46,6 +62,7 @@ lvim.keys.normal_mode = {
   ["<Leader><Leader>W"] = ":<C-U>call EasyMotion#WBW(0,0)<CR>",
   ["<Leader>r"] = ":LspRestart<CR>",
   ["<Leader>o"] = ":set fdm=syntax<CR>",
+  ["<Leader><Leader>p"] = ":Glow<CR>",
 }
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
@@ -251,9 +268,9 @@ lvim.plugins = {
   { "tpope/vim-surround" },
   { "wakatime/vim-wakatime" },
   { 'liuchengxu/vista.vim' },
-  { 'luochen1990/rainbow' },
+  -- { 'luochen1990/rainbow' },
   { 'mg979/vim-visual-multi' },
-  { "p00f/nvim-ts-rainbow" },
+  -- { "p00f/nvim-ts-rainbow" },
   { 'rust-lang/rust.vim' },
   { 'gko/vim-coloresque' },
   {
@@ -271,23 +288,31 @@ lvim.plugins = {
   -- {"github/copilot.vim"},
   -- vim theme
   { 'Mofiqul/vscode.nvim' },
+  { 'shaeinst/roshnivim-cs' },
   -- like jetbrain
   { 'doums/darcula' },
   { "folke/tokyonight.nvim" },
+  -- indentLine
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    -- config = function()
+    --   require("indent_blankline").setup {}
+    -- end
+  },
 
-  { 'Yggdroot/indentLine' },
+  -- { 'Yggdroot/indentLine' },
   -- debug
-  { 'puremourning/vimspector' },
-  { 'skywind3000/vim-rt-format' },
+  -- { 'puremourning/vimspector' },
+  -- { 'skywind3000/vim-rt-format' },
+  {"ellisonleao/glow.nvim", branch = 'main'},
 }
-
-vim.g.rainbow_active = 1
+-- vim.g.rainbow_active = 1
 vim.g.vscode_style = "dark"
 vim.g.vscode_italic_comment = 1
-
 vim.g.indentLine_enabled = 1
-
 vim.g.vimspector_enable_mappings = 'HUMAN'
+vim.g.indent_blankline_show_current_context = true
+vim.g.indent_blankline_show_current_context_start = true
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
