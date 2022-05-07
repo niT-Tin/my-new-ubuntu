@@ -107,7 +107,6 @@
   nvidia-smi # 查看自己的cuda版本,并且去nvidia观望下载对应的文件(写这个note的时候官方还没有
   # Ubuntu22.04(刚刚发布半个月左右) 的相关包,但是使用20.04的也是可以的但是要多下载一个库文件
   # https://ubuntu.pkgs.org/20.04/ubuntu-main-amd64/liburcu6_0.11.1-2_amd64.deb.html
-  )
   ```
   
   安装完驱动之后，还要下载cudnn,直接去nvidia下载对应版本的即可,下面是下载完成之后的需要的操作
