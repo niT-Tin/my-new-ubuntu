@@ -48,7 +48,7 @@
   pip install tensorflow
   ```
   
-    python测试代码(本来就是观望的代码,只是自己放在这方便一点,以后就懒得去找了)
+    python测试代码(本来就是官网的代码,只是自己放在这方便一点,以后就懒得去找了)
   
   ```python
   import tensorflow as tf
