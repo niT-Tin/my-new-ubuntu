@@ -87,6 +87,7 @@
   - feh 壁纸设置
   - rofi 软件启动
   - thunar 文件管理器
+  - compton 给你的窗口duang～增加特效
   - 其他就是配置文件吧，反正都在这了
 
 - 设置Ubuntu内核不自动更新
@@ -94,3 +95,11 @@
   ```bash
   sudo apt-mark hold linux-generic linux-image-generic linux-headers-generic
   ```
+- 相关配置文件所在位置(可以自己设置位置，在此只是自己的目前配置位置)
+  |    配置文件名称   |           说明             |              配置文件路径            |
+  | ----------------- | -------------------------- | ------------------------------------ |
+  |   compton.conf    |    compton配置文件         | `$HOME/.config/compton.conf`         |
+  |     config        |     i3wm配置文件           | `$HOME/.config/i3/config`            |
+  |     config.lua    | 目前使用的lunarvim配置文件 | `$HOME/.config/lvim/config.lua`      |
+  |   i3blocks.conf   | i3blocks状态栏配置文件     | `$HOME/.config/i3/i3blocks.conf`     |
+  | bing_wallpaper.sh |     获取bing壁纸sh脚本     | `$HOME/.config/i3/bing_wallpaper.sh` |
