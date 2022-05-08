@@ -304,7 +304,9 @@ lvim.plugins = {
   -- debug
   -- { 'puremourning/vimspector' },
   -- { 'skywind3000/vim-rt-format' },
+  -- preview of markdown in terminal
   {"ellisonleao/glow.nvim", branch = 'main'},
+  {'kdheepak/lazygit.nvim'},
 }
 -- vim.g.rainbow_active = 1
 vim.g.vscode_style = "dark"
