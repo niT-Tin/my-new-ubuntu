@@ -1,6 +1,7 @@
 set nu
 set nu
 syntax on
+filetype plugin indent on
 inoremap jk <Esc>
 let mapleader = " "
 call plug#begin()
@@ -19,6 +20,7 @@ Plug 'numToStr/Comment.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'wakatime/vim-wakatime'
 Plug 'ellisonleao/glow.nvim', {'branch': 'main'}
+Plug 'rust-lang/rust.vim'
 call plug#end()
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
