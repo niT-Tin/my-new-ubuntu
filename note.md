@@ -117,6 +117,10 @@
   sudo cp lib/libcudnn* /usr/local/cuda/lib64
   sudo chmod a+r /usr/local/cuda/include/cudnn.h
   sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+  # 在~/.zshrc文件内添加如下语句
+  export CUDA_HOME=/usr/local/cuda-11.7 # 具体版本视具体安装情况定
+  export PATH=$PATH:/usr/local/cuda-11.7/bin
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.7/lib64
   ```
 
 - 解压xz后缀文件
