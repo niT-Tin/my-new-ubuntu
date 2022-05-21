@@ -217,7 +217,7 @@ for_window [class=".*"] border pixel 0
 
 # Examples
 exec_always i3-msg gaps inner all set 20
-exec_always i3-msg gaps outer current plus 5
+exec_always i3-msg gaps outer current plus 3
 exec_always i3-msg gaps horizontal current plus 40
 exec_always i3-msg gaps outer current toggle 60
 
