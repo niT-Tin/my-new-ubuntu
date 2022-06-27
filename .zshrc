@@ -99,9 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=/home/liuzehao/.local/bin:$PATH
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -118,35 +119,25 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export CUDA_HOME=/usr/local/cuda-11.7
-export PATH=$PATH:/usr/local/cuda-11.7/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.7/lib64
-
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
-export MY_DEV_VAL=true
-
-JAVA_ROOT=/home/liuzehao/java
-export JAVA_HOME=$JAVA_ROOT/jdk-17.0.3.1
-# export JAVA_HOME=$JAVA_ROOT/jdk1.8.0_333
-export PATH=$JAVA_HOME/bin:$PATH
-# export PATH=/usr/local/ffmpeg/bin:$PATH
-export PKG_CONFIG_PATH=/usr/bin/ffmpeg-dir/lib/pkgconfig
-export ncfg=/home/liuzehao/.config/nvim/init.vim
-export vcfg=/home/liuzehao/.config/lvim/config.lua
-
+export PATH=/home/liuzehao/.local/bin:$PATH
 # alias
-# alias bcat=batcat
-alias n="nvim"
-alias v="vim"
-alias l="lvim"
-alias b="batcat"
+alias b=bat
+alias v=vim
+alias n=nvim
+alias e="exa -h -l"
+export ncfg=/home/liuzehao/.config/nvim/init.vim
 # for ffmpeg x11grab
 export DISPLAY=:1
 
-alias e="exa -h -l"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval $(thefuck --alias)
+alias fk=fuck
+
+export JAVA_HOME=/home/liuzehao/applications/languages/jdk-17.0.3.1
+export PATH=$JAVA_HOME/bin:$PATH
+export GROOVY_HOME=/home/liuzehao/applications/languages/groovy-4.0.2
+export PATH=$GROOVY_HOME/bin:$PATH
+export PATH=/usr/local/ffmpeg/bin:$PATH
+
+export CROSS_TOOLCHAINS=/home/liuzehao/playground/TPU/tpu_op_contest_s1/toolchains_dir
+export PATH=$(go env GOPATH)/bin:$PATH
